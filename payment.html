@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="logo">
+                    <a href="#">Drive Guard</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Registration</a></li>
+                    <li><a href="#">Payment</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+    <div class="container">
+        <h2 class="title"> Payment Portal</h2>
+        <form id="paymentForm"  method="post" action="payment.php">
+          
+
+    <div class="form-group">
+        <label for="paymentMethod">Payment Method</label><br>
+        <div class="icons"> 
+            <!--link the URL's of the payment icon's -->
+            <br>
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-paypal" viewBox="0 0 16 16">
+          <path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.351.351 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91.379-.27.712-.603.993-1.005a4.942 4.942 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.687 2.687 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.695.695 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016c.217.124.4.27.548.438.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.873.873 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.352.352 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32.845-5.214Z"/>
+          </svg>
+          <img height="40" src="https://shoplineimg.com/assets/footer/card_visa.png"/>
+          <img height="40" src="https://shoplineimg.com/assets/footer/card_master.png"/>
+        
+          </div>
+        <input type="radio" id="paypal" name="paymentMethod" value="paypal" checked>
+        <label for="paypal">PayPal</label>
+
+        <input type="radio" id="creditCard" name="paymentMethod" value="creditCard"  checked>
+        <label for="creditCard">Credit Card</label>
+
+        <input type="radio" id="debitCard" name="paymentMethod" value="debitCard" checked>
+        <label for="debitCard">Debit Card</label>
+
+    </div>
+            
+            <div class="form-group">
+                <label for="amount">Amount: Rs</label>
+                <input type="text" id="amount" name ="amount" class="form-control" placeholder="00.00" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Card Holder Name</label>
+                <input type="text" id="Cname" name="Cname" class="form-control" placeholder="" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Expiry Date</label>
+                <input type="date" id="expiryDate" name="expiryDate" class="form-control" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" class="form-control" placeholder="123" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Reason</label>
+                <textarea rows="5" columns="40" id="reason" name="reason" class="form-control" placeholder="Type here"></textarea>
+            </div>
+            
+            
+        <h3><u>Terms And Conditions</u></h3>
+        <p>By using our payment services, you give us permission to charge the specified amount for the goods or services you've ordered using your preferred payment method. You acknowledge that you are the cardholder's authorized user and that you have the credit or cash necessary to make the payment. You are in charge of making sure that all of your payment details, such as credit card numbers, billing addresses, and contact information, are accurate. You promise to contact us right away if there is a payment processing issue or if your payment method is used fraudulently.</p>
+
+        <input type="checkbox" id="insurance" name="ins">
+        <label for="insurance">I have read and agreed to the terms and conditions</label><br><br>
+
+            <button type="button" id="submitBtn" class="btn">Submit Payment</button>
+        </form>
+        <div id="paymentStatus" class="status"></div>
+    </div>
+
+
+    <script src="payment.js"></script>
+</body>
+
+</html>
